@@ -36,7 +36,7 @@ int main()
 		cout << "choose from the available classes : ";
 		cin >> charaClass;
 	}
-	Character player(fName, "Doe", "I am the best!", 500, 100, race, charaClass);
+	Character player(fName, "Doe", "I am the dumbest!", 500, 100, race, charaClass);
 	cout << "you are : "; player.Introduce();
 	
 
