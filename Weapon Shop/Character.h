@@ -49,12 +49,12 @@ public :
 
     string GetRace() 
     {
-        return 0;
+
     }
 
     string GetCharacterClass() 
     {
-        return 0;
+
     }
 
     int GetMoney() const

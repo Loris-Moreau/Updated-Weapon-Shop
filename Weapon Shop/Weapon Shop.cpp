@@ -15,8 +15,13 @@ int main()
 	//Initialize chara
 	// Character(const string& firstName, const string& lastName, const string& catchphrase, int money, int lifePoints, const string& race, const string& characterClass)
 	string fName = "John";
-	cout << "your name (Default is John : ";
+	cout << "your First Name : ";
 	cin >> fName;
+
+	string LName = "Doe";
+	cout << "your Last Name : ";
+	cin >> LName;
+
 	int race;
 	cout << "choose from the available races : ";
 	cin >> race;
@@ -36,7 +41,8 @@ int main()
 		cout << "choose from the available classes : ";
 		cin >> charaClass;
 	}
-	Character player(fName, "Doe", "I am the dumbest!", 500, 100, race, charaClass);
+
+	Character player(fName, LName, "I am the dumbest!", 500, 100, race, charaClass);
 	cout << "you are : "; player.Introduce();
 	
 

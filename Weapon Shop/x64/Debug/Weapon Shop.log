@@ -1,15 +1,6 @@
-﻿  Character.cpp
-  Merchant.cpp
-  Weapon Shop.cpp
-C:\Users\loris.moreau\source\repos\Weapon Shop\Weapon Shop\Weapon Shop.cpp(39,18): error C2665: 'Character::Character': no overloaded function could convert all the argument types
+﻿  Weapon Shop.cpp
+C:\Users\loris.moreau\source\repos\Weapon Shop\Weapon Shop\Weapon Shop.cpp(45,18): error C2665: 'Character::Character': no overloaded function could convert all the argument types
 C:\Users\loris.moreau\source\repos\Weapon Shop\Weapon Shop\Character.h(14,5): message : could be 'Character::Character(std::string,std::string,std::string,int,int,Race,CharacterClass)'
-C:\Users\loris.moreau\source\repos\Weapon Shop\Weapon Shop\Weapon Shop.cpp(39,18): message : 'Character::Character(std::string,std::string,std::string,int,int,Race,CharacterClass)': cannot convert argument 6 from 'int' to 'Race'
-C:\Users\loris.moreau\source\repos\Weapon Shop\Weapon Shop\Weapon Shop.cpp(39,61): message : Conversion to enumeration type requires an explicit cast (static_cast, C-style cast or parenthesized function-style cast)
-C:\Users\loris.moreau\source\repos\Weapon Shop\Weapon Shop\Weapon Shop.cpp(39,18): message : while trying to match the argument list '(std::string, const char [4], const char [15], int, int, int, int)'
-  Generating Code...
-C:\Users\loris.moreau\source\repos\Weapon Shop\Weapon Shop\Race.h(30): warning C4715: 'RaceToStr': not all control paths return a value
-C:\Users\loris.moreau\source\repos\Weapon Shop\Weapon Shop\WeaponTypes.h(34): warning C4715: 'WeaponToStr': not all control paths return a value
-C:\Users\loris.moreau\source\repos\Weapon Shop\Weapon Shop\CharacterClass.h(34): warning C4715: 'ClassToStr': not all control paths return a value
-C:\Users\loris.moreau\source\repos\Weapon Shop\Weapon Shop\CharacterClass.h(34): warning C4715: 'ClassToStr': not all control paths return a value
-C:\Users\loris.moreau\source\repos\Weapon Shop\Weapon Shop\WeaponTypes.h(34): warning C4715: 'WeaponToStr': not all control paths return a value
-C:\Users\loris.moreau\source\repos\Weapon Shop\Weapon Shop\Race.h(30): warning C4715: 'RaceToStr': not all control paths return a value
+C:\Users\loris.moreau\source\repos\Weapon Shop\Weapon Shop\Weapon Shop.cpp(45,18): message : 'Character::Character(std::string,std::string,std::string,int,int,Race,CharacterClass)': cannot convert argument 6 from 'int' to 'Race'
+C:\Users\loris.moreau\source\repos\Weapon Shop\Weapon Shop\Weapon Shop.cpp(45,64): message : Conversion to enumeration type requires an explicit cast (static_cast, C-style cast or parenthesized function-style cast)
+C:\Users\loris.moreau\source\repos\Weapon Shop\Weapon Shop\Weapon Shop.cpp(45,18): message : while trying to match the argument list '(std::string, std::string, const char [18], int, int, int, int)'
