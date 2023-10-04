@@ -18,13 +18,14 @@ void Merchant::DisplayShopInventory() const
     }
 }
 
-/*
+
 // Function to add a weapon to the merchant's inventory
 void AddWeapon(Weapon& weapon)
 {
-    weapon.push_back(weapon);
+    cout << "no";
+    //weapon.push_back(weapon);
 }
-*/
+
 
 void Merchant::BuyWeapon(Character& character, const string& weaponName, double durabilityModifier)
 {
