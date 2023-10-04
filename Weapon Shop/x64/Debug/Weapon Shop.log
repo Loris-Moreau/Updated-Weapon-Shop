@@ -1,6 +1,8 @@
-﻿  Weapon Shop.cpp
-C:\Users\loris.moreau\source\repos\Weapon Shop\Weapon Shop\Weapon Shop.cpp(45,18): error C2665: 'Character::Character': no overloaded function could convert all the argument types
-C:\Users\loris.moreau\source\repos\Weapon Shop\Weapon Shop\Character.h(14,5): message : could be 'Character::Character(std::string,std::string,std::string,int,int,Race,CharacterClass)'
-C:\Users\loris.moreau\source\repos\Weapon Shop\Weapon Shop\Weapon Shop.cpp(45,18): message : 'Character::Character(std::string,std::string,std::string,int,int,Race,CharacterClass)': cannot convert argument 6 from 'int' to 'Race'
-C:\Users\loris.moreau\source\repos\Weapon Shop\Weapon Shop\Weapon Shop.cpp(45,64): message : Conversion to enumeration type requires an explicit cast (static_cast, C-style cast or parenthesized function-style cast)
-C:\Users\loris.moreau\source\repos\Weapon Shop\Weapon Shop\Weapon Shop.cpp(45,18): message : while trying to match the argument list '(std::string, std::string, const char [18], int, int, int, int)'
+﻿  Merchant.cpp
+C:\Users\loris.moreau\source\repos\Weapon Shop\Weapon Shop\Merchant.cpp(29,102): error C2572: 'Merchant::BuyWeapon': redefinition of default argument: parameter 1
+C:\Users\loris.moreau\source\repos\Weapon Shop\Weapon Shop\Merchant.h(20,10): message : see declaration of 'Merchant::BuyWeapon'
+C:\Users\loris.moreau\source\repos\Weapon Shop\Weapon Shop\Merchant.cpp(57,103): error C2572: 'Merchant::SellWeapon': redefinition of default argument: parameter 1
+C:\Users\loris.moreau\source\repos\Weapon Shop\Weapon Shop\Merchant.h(22,10): message : see declaration of 'Merchant::SellWeapon'
+  Weapon Shop.cpp
+  Weapon.cpp
+  Generating Code...

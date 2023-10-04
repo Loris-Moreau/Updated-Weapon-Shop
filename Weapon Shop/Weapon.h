@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <vector>
 
 #include "WeaponTypes.h"
 
@@ -9,62 +10,29 @@ using namespace std;
 class Weapon
 {
 public:
-    Weapon(const string& name, const string& description, WeaponTypes type, double weight, int damage, int buyingCost, double durability)
-        : _name(name), _description(description), _type(type), _weight(weight), _damage(damage), _price(buyingCost), _durability(durability)
-    {
+    Weapon(string name, string description, weaponTypes type, double weight, int damage, int buyingCost, double durability);
 
-    }
+    string GetName();
 
-    const string& GetName() const
-    {
-        return _name;
-    }
+    string GetDescription();
 
-    const string& GetDescription() const
-    {
-        return _description;
-    }
+    weaponTypes GetType();
 
-    WeaponTypes GetType() const
-    {
-        return _type;
-    }
+    double GetWeight();
 
-    double GetWeight() const
-    {
-        return _weight;
-    }
+    int GetDamage();
 
-    int GetDamage() const
-    {
-        return _damage;
-    }
+    int GetPrice();
 
-    int GetPrice() const
-    {
-        return _price;
-    }
+    double GetDurability();
 
-    double GetDurability() const
-    {
-        return _durability;
-    }
-
-    void ReduceDurability(double reduction)
-    {
-        _durability -= reduction;
-
-        if (_durability < 0)
-        {
-            _durability = 0;
-        }
-    }
+    void ReduceDurability(double reduction);
 
 private:
     string _name;
     string _description;
 
-    WeaponTypes _type;
+    weaponTypes _type;
 
     double _weight;
     int _damage;

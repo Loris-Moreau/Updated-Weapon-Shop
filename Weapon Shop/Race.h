@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+
 using namespace std;
 
 enum Race
@@ -26,5 +27,8 @@ string RaceToStr(Race races)
 
 	case Race::Human:
 		return "Human";
+	
+	default:
+		return "N/A";
 	}
 }

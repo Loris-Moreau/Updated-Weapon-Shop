@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+
 using namespace std;
 
 enum CharacterClass
@@ -30,5 +31,7 @@ string ClassToStr(CharacterClass charaClass)
 
 	case CharacterClass::Artificer:
 		return "Artificer";
+	default:
+		return "N/A";
 	}
 }

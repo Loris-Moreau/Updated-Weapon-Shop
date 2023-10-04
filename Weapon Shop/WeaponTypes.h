@@ -1,10 +1,12 @@
 #pragma once
 #include <iostream>
 #include <string>
+
 using namespace std;
 
-enum WeaponTypes
+enum weaponTypes
 {
+	none,
     Sword,
     Dagger,
     Bow,
@@ -12,23 +14,29 @@ enum WeaponTypes
     Gun
 };
 
-string WeaponToStr(WeaponTypes weapon)
+string WeaponToStr(weaponTypes weapon)
 {
 	switch (weapon)
 	{
-	case WeaponTypes::Sword:
+	case weaponTypes::none:
+		return "None";
+
+	case weaponTypes::Sword:
 		return "Sword";
 
-	case WeaponTypes::Dagger:
+	case weaponTypes::Dagger:
 		return "Dagger";
 
-	case WeaponTypes::Bow:
+	case weaponTypes::Bow:
 		return "Bow";
 
-	case WeaponTypes::Staff:
+	case weaponTypes::Staff:
 		return "Staff";
 
-	case WeaponTypes::Gun:
+	case weaponTypes::Gun:
 		return "Gun";
+	default:
+		return "N/A";
 	}
+	
 }
