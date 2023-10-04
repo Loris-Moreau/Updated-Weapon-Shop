@@ -51,10 +51,11 @@ void Character::UseWeapon(Character& target)
         int damage = 6;
         target.ReceiveDamage(damage);
         ReceiveDamage(damage / 3);
-        cout << _charaFirstName << " used their bare fists to deal " << damage << " damage to " << target.GetFirstName() << " and has received " << damage / 3 << endl;
+        cout << _charaFirstName << " used their bare fists to deal " << damage << " damage to " << target.GetFirstName() << " and has received " << damage / 3 << " damage" << endl;
 
         cout << target.GetFirstName() << " has " << target.GetLifePoints() << " HP left " << endl;
         cout << GetFirstName() << " has " << GetLifePoints() << " HP left " << endl;
+
     }
 }
 

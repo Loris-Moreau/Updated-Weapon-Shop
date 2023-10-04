@@ -62,4 +62,18 @@ int main()
 	merchant.Introduce();
 
 	merchant.DisplayShopInventory();
+
+	while (player.GetLifePoints() > 0 || enemyNPC.GetLifePoints() < 0)
+	{
+		enemyNPC.UseWeapon(player);
+		player.UseWeapon(enemyNPC);
+
+		cout << player.GetFirstName() << " has " << player.GetLifePoints() << " LP left" << endl;
+		cout << enemyNPC.GetFirstName() << " has " << enemyNPC.GetLifePoints() << " LP left" << endl;
+	}
+
+	if (enemyNPC.GetLifePoints() <= 0)
+	{
+		player.Loot(enemyNPC);
+	}
 }
