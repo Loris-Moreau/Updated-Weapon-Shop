@@ -41,8 +41,10 @@ int main()
 		cout << "choose from the available classes : ";
 		cin >> charaClass;
 	}
-	Character player(fName, LName, "I am the dumbest!", 500, 100, (Race)race, (CharacterClass)charaClass, weaponTypes::Bow);
-	cout << "you are : "; player.Introduce();
+	Character player(fName, LName, "I am the dumbest!", 500, 100, (Race)race, (CharacterClass)charaClass, weaponTypes::Dagger);
+
+	cout << "you are : " << endl; 
+	player.Introduce();
 
 	//Initialize merchant/shop
 

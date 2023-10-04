@@ -1,8 +1,2 @@
-﻿  Merchant.cpp
-C:\Users\loris.moreau\source\repos\Weapon Shop\Weapon Shop\Merchant.cpp(29,102): error C2572: 'Merchant::BuyWeapon': redefinition of default argument: parameter 1
-C:\Users\loris.moreau\source\repos\Weapon Shop\Weapon Shop\Merchant.h(20,10): message : see declaration of 'Merchant::BuyWeapon'
-C:\Users\loris.moreau\source\repos\Weapon Shop\Weapon Shop\Merchant.cpp(57,103): error C2572: 'Merchant::SellWeapon': redefinition of default argument: parameter 1
-C:\Users\loris.moreau\source\repos\Weapon Shop\Weapon Shop\Merchant.h(22,10): message : see declaration of 'Merchant::SellWeapon'
-  Weapon Shop.cpp
-  Weapon.cpp
-  Generating Code...
+﻿  Weapon Shop.cpp
+  Weapon Shop.vcxproj -> C:\Users\loris.moreau\source\repos\Weapon Shop\x64\Debug\Weapon Shop.exe

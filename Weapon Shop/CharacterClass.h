@@ -13,7 +13,7 @@ enum CharacterClass
 	Artificer
 };
 
-string ClassToStr(CharacterClass charaClass)
+inline string ClassToStr(CharacterClass charaClass)
 {
 	switch (charaClass)
 	{

@@ -14,7 +14,7 @@ enum weaponTypes
     Gun
 };
 
-string WeaponToStr(weaponTypes weapon)
+inline string WeaponToStr(weaponTypes weapon)
 {
 	switch (weapon)
 	{

@@ -12,7 +12,7 @@ enum Race
 	Human
 };
 
-string RaceToStr(Race races)
+inline string RaceToStr(Race races)
 {
 	switch (races)
 	{
@@ -27,7 +27,7 @@ string RaceToStr(Race races)
 
 	case Race::Human:
 		return "Human";
-	
+
 	default:
 		return "N/A";
 	}

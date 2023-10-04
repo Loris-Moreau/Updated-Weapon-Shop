@@ -26,7 +26,7 @@ void AddWeapon(Weapon& weapon)
 }
 */
 
-void Merchant::BuyWeapon(Character& character, const string& weaponName, double durabilityModifier = 1.0)
+void Merchant::BuyWeapon(Character& character, const string& weaponName, double durabilityModifier)
 {
     Weapon* weaponToBuy = nullptr;
 
@@ -54,19 +54,19 @@ void Merchant::BuyWeapon(Character& character, const string& weaponName, double 
     cout << weaponName << " is not available in " << _merchantName << "'s shop." << endl;
 }
 
-void Merchant::SellWeapon(Character& character, const string& weaponName, double durabilityModifier = 1.0)
+void Merchant::SellWeapon(Character& character, const string& weaponName, double durabilityModifier)
 {
     Weapon* weaponToSell = character.GetWeapon();
 
     if (weaponToSell && weaponToSell->GetName() == weaponName)
     {
-        int sellingCost = (int)(weaponToSell->GetPrice() * (1 + weaponToSell->GetDurability() * durabilityModifier));
+        int sellingCost = (int)(weaponToSell->GetPrice() * (0.2 + weaponToSell->GetDurability() * durabilityModifier));
 
         character.SetWeapon(nullptr);
         character.SetMoney(character.GetMoney() + sellingCost);
 
         _shopMoney -= sellingCost;
-        cout << character.GetFirstName() << " sold " << weaponToSell->GetName() << " for " << sellingCost << " coins to " << _merchantName << "'s shop." << endl;
+        cout << character.GetFirstName() << " sold " << weaponToSell->GetName() << " for " << sellingCost << " coins to " << _shopName << "'s shop." << endl;
     }
     else
     {
