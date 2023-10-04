@@ -8,7 +8,7 @@ Merchant::Merchant(string name, string shopName, string description, string catc
 
 void Merchant::Introduce() const
 {
-    cout << "Name : " << _merchantName << "Welcome to " << _shopName << " " << _description << endl;
+    cout << "Name : " << _merchantName << " Welcome to " << _shopName << ", " << _description << endl;
     //cout << "Catchphrase : " << _merchantCatchphrase << endl;
     cout << "Money : " << _shopMoney << " coins" << endl;
 }
@@ -23,15 +23,6 @@ void Merchant::DisplayShopInventory() const
             << ", Damage : " << weapon.GetDamage() << ", Buying Cost : " << weapon.GetPrice() << ", Durability : " << weapon.GetDurability() << endl;
     }
 }
-
-
-// Function to add a weapon to the merchant's inventory
-void Merchant::AddWeapon(Weapon& weapon)
-{
-    cout << "no";
-    //weapon.push_back(weapon);
-}
-
 
 void Merchant::BuyWeapon(Character& character, const string& weaponName, double durabilityModifier)
 {

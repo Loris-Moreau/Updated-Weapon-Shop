@@ -1,7 +1,2 @@
 ﻿  Weapon Shop.cpp
-C:\Users\loris.moreau\source\repos\Weapon Shop\Weapon Shop\Weapon Shop.cpp(60,19): error C2665: 'Merchant::Merchant': no overloaded function could convert all the argument types
-C:\Users\loris.moreau\source\repos\Weapon Shop\Weapon Shop\Merchant.h(13,5): message : could be 'Merchant::Merchant(std::string,std::string,std::string,std::string,int,std::vector<Weapon,std::allocator<Weapon>> &)'
-C:\Users\loris.moreau\source\repos\Weapon Shop\Weapon Shop\Weapon Shop.cpp(60,19): message : 'Merchant::Merchant(std::string,std::string,std::string,std::string,int,std::vector<Weapon,std::allocator<Weapon>> &)': cannot convert argument 6 from 'weaponTypes' to 'std::vector<Weapon,std::allocator<Weapon>> &'
-C:\Users\loris.moreau\source\repos\Weapon Shop\Weapon Shop\Weapon Shop.cpp(60,19): message : while trying to match the argument list '(const char [4], const char [12], const char [32], const char [21], int, weaponTypes)'
-  Weapon.cpp
-  Generating Code...
+  Weapon Shop.vcxproj -> C:\Users\loris.moreau\source\repos\Weapon Shop\x64\Debug\Weapon Shop.exe
