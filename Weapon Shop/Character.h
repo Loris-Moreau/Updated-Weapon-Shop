@@ -12,7 +12,7 @@ using namespace std;
 class Character
 {
 public :
-    Character(string firstName, string lastName, string catchphrase, int money, int lifePoints, Race race, CharacterClass characterClass, weaponTypes weapon);
+    Character(string firstName, string lastName, string catchphrase, int money, int lifePoints, Race race, CharacterClass characterClass, Weapon weapon);
 
     void Introduce() const;
 

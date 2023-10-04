@@ -38,5 +38,4 @@ inline string WeaponToStr(weaponTypes weapon)
 	default:
 		return "N/A";
 	}
-	
 }

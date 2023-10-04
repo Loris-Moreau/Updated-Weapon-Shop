@@ -1,5 +1,11 @@
 #include "Merchant.h"
 
+Merchant::Merchant(string name, string shopName, string description, string catchphrase, int money, vector<Weapon>& weapons)
+    : _merchantName(name), _shopName(shopName), _description(description), _merchantCatchphrase(catchphrase), _shopMoney(money), _weapons(weapons)
+{
+
+}
+
 void Merchant::Introduce() const
 {
     cout << "Name : " << _merchantName << "Welcome to " << _shopName << " " << _description << endl;
@@ -9,7 +15,7 @@ void Merchant::Introduce() const
 
 void Merchant::DisplayShopInventory() const
 {
-    cout << "Welcome to " << _shopName << "! I am " << _merchantName << " and here are the weapons available for sale :" << endl;
+    cout << "Welcome to " << _shopName << "! I am " << _merchantName << " here are my wares :" << endl;
 
     for (Weapon weapon : _weapons)
     {
@@ -20,7 +26,7 @@ void Merchant::DisplayShopInventory() const
 
 
 // Function to add a weapon to the merchant's inventory
-void AddWeapon(Weapon& weapon)
+void Merchant::AddWeapon(Weapon& weapon)
 {
     cout << "no";
     //weapon.push_back(weapon);

@@ -1,5 +1,6 @@
 #include "Character.h"
-Character::Character(string firstName, string lastName, string catchphrase, int money, int lifePoints, Race race, CharacterClass characterClass, weaponTypes weapon)
+
+Character::Character(string firstName, string lastName, string catchphrase, int money, int lifePoints, Race race, CharacterClass characterClass, Weapon weapon)
     : _charaFirstName(firstName), _charaLastName(lastName), _charaCatchphrase(catchphrase), _charaMoney(money), _charaLifePoints(lifePoints),
     _race(race), _characterClass(characterClass), _weapon(nullptr)
 {
@@ -33,12 +34,27 @@ void Character::UseWeapon(Character& target)
         target.ReceiveDamage(damage);
         _weapon->ReduceDurability(0.2);
 
-        cout << _charaFirstName << " used " << _weapon->GetName() << " to deal " << damage << " damage to " << target.GetFirstName() << ". " <<
+        cout << _charaFirstName << " used " << _weapon->GetName() << " to deal " << damage << " damage to " << target.GetFirstName() << endl <<
             _weapon->GetName() << " durability reduced to " << _weapon->GetDurability() << endl;
+
+        if (_weapon->GetDurability() < 0)
+        {
+            SetWeapon(nullptr);
+            cout << _weapon << " broke" << endl;
+        }
+        cout << target.GetFirstName() << " has " << target.GetLifePoints() << " HP left " << endl;
     }
     else
     {
         cout << "No weapon equipped" << endl;
+
+        int damage = 6;
+        target.ReceiveDamage(damage);
+        ReceiveDamage(damage / 3);
+        cout << _charaFirstName << " used their bare fists to deal " << damage << " damage to " << target.GetFirstName() << " and has received " << damage / 3 << endl;
+
+        cout << target.GetFirstName() << " has " << target.GetLifePoints() << " HP left " << endl;
+        cout << GetFirstName() << " has " << GetLifePoints() << " HP left " << endl;
     }
 }
 
@@ -62,12 +78,12 @@ void Character::Loot(Character& defeatedCharacter)
         _weapon = weapon;
         defeatedCharacter.SetWeapon(nullptr);
 
-        cout << _charaFirstName << " looted " << weapon->GetName() << " and " << defeatedCharacter.GetMoney() / 2 << " coins from " <<
-            defeatedCharacter.GetFirstName() << endl;
+        cout << _charaFirstName << " looted " << weapon->GetName() << " and " <<
+            defeatedCharacter.GetMoney() / 2 << " coins from " << defeatedCharacter.GetFirstName() << endl;
     }
     else
     {
-        cout << "No weapon to loot from " << defeatedCharacter.GetFirstName() << endl;
+        cout << _charaFirstName << " looted " << defeatedCharacter.GetMoney() / 2 << " coins from " << defeatedCharacter.GetFirstName() << endl;
     }
 }
 

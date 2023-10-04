@@ -10,6 +10,8 @@ using namespace std;
 class Merchant
 {
 public:
+    Merchant(string name, string shopName, string description, string catchphrase, int money, vector<Weapon>& weapons);
+
     void Introduce() const;
 
     void DisplayShopInventory() const;
