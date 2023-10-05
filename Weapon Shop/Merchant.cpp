@@ -8,19 +8,19 @@ Merchant::Merchant(string name, string shopName, string description, string catc
 
 void Merchant::Introduce() const
 {
-    cout << "Name : " << _merchantName << " Welcome to " << _shopName << ", " << _description << endl;
+    cout << "Shopkeeper : Welcome to " << _shopName << ", " << _description << " ! I am " << _merchantName << endl;
     //cout << "Catchphrase : " << _merchantCatchphrase << endl;
     cout << "Money : " << _shopMoney << " coins" << endl;
 }
 
 void Merchant::DisplayShopInventory() const
 {
-    cout << "Welcome to " << _shopName << "! I am " << _merchantName << " here are my wares :" << endl;
+    cout << _merchantName << " : take a look : " << endl;
 
     for (Weapon weapon : _weapons)
     {
-        cout << "- Name : " << weapon.GetName() << ", Type : " << weapon.GetType() << ", Description : " << weapon.GetDescription() << ", Weight : " << weapon.GetWeight()
-            << ", Damage : " << weapon.GetDamage() << ", Buying Cost : " << weapon.GetPrice() << ", Durability : " << weapon.GetDurability() << endl;
+        cout << "- " << weapon.GetName() /* << ", Type : " << weapon.GetType() */<< " --> " << weapon.GetDescription() << ", Weight : " << weapon.GetWeight()
+            << ", Damage : " << weapon.GetDamage() << ", Durability : " << weapon.GetDurability() << ", for " << weapon.GetPrice() << " coins" << endl;
     }
 }
 

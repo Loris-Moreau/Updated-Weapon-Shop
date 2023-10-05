@@ -9,12 +9,12 @@ Character::Character(string firstName, string lastName, string catchphrase, int 
 
 void Character::Introduce() const
 {
-    cout << "Name : " << _charaFirstName << " " << _charaLastName << endl;
-    cout << "Catchphrase : " << _charaCatchphrase << endl;
-    cout << "Race : " << _race << endl;
-    cout << "Class : " << _characterClass << endl;
-    cout << "Money : " << _charaMoney << " coins" << endl;
-    cout << "Life Points : " << _charaLifePoints << endl;
+    cout << "Player : " << _charaFirstName << " " << _charaLastName << endl;
+    cout << "Catchphrase -> " << _charaCatchphrase << endl;
+    cout << "Race -> " << RaceToStr(_race) << endl;
+    cout << "Class -> " << ClassToStr(_characterClass) << endl;
+    cout << "Money -> " << _charaMoney << " coins" << endl;
+    cout << "Life Points -> " << _charaLifePoints << endl;
 
     if (_weapon)
     {
@@ -25,6 +25,24 @@ void Character::Introduce() const
         cout << "Weapon : WAH" << endl;
     }
 }
+
+/*
+void Character::DisplayRaces() const
+{
+    for (int i = 1; i < 4; i++)
+    {
+        cout << i << ") " << RaceToStr((Race)i) << endl;
+    }
+}
+
+void Character::DisplayClasses() const
+{
+    for (int i = 1; i < 5; i++)
+    {
+        cout << i << ") " << ClassToStr((CharacterClass)i) << endl;
+    }
+}
+*/
 
 void Character::UseWeapon(Character& target)
 {

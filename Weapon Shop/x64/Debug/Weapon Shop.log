@@ -1,2 +1,9 @@
-﻿  Weapon Shop.cpp
-  Weapon Shop.vcxproj -> C:\Users\loris.moreau\source\repos\Weapon Shop\x64\Debug\Weapon Shop.exe
+﻿  Character.cpp
+  Merchant.cpp
+  Weapon Shop.cpp
+  Generating Code...
+Merchant.obj : error LNK2005: "void __cdecl DisplayClasses(void)" (?DisplayClasses@@YAXXZ) already defined in Character.obj
+Merchant.obj : error LNK2005: "void __cdecl DisplayRaces(void)" (?DisplayRaces@@YAXXZ) already defined in Character.obj
+Weapon Shop.obj : error LNK2005: "void __cdecl DisplayClasses(void)" (?DisplayClasses@@YAXXZ) already defined in Character.obj
+Weapon Shop.obj : error LNK2005: "void __cdecl DisplayRaces(void)" (?DisplayRaces@@YAXXZ) already defined in Character.obj
+C:\Users\loris.moreau\source\repos\Weapon Shop\x64\Debug\Weapon Shop.exe : fatal error LNK1169: one or more multiply defined symbols found

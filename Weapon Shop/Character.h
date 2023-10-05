@@ -11,10 +11,14 @@ using namespace std;
 
 class Character
 {
-public :
+public:
     Character(string firstName, string lastName, string catchphrase, int money, int lifePoints, Race race, CharacterClass characterClass, Weapon weapon);
 
     void Introduce() const;
+
+    //void DisplayRaces() const;
+
+    //void DisplayClasses() const;
 
     void UseWeapon(Character& target);
 
@@ -41,15 +45,15 @@ public :
     void SetWeapon(Weapon* weapon);
 
 private:
-	string _charaFirstName;
-	string _charaLastName;
-	string _charaCatchphrase;
-	int _charaMoney;
-	int _charaLifePoints;
-	
+    string _charaFirstName;
+    string _charaLastName;
+    string _charaCatchphrase;
+    int _charaMoney;
+    int _charaLifePoints;
+
     Weapon* _weapon;
 
-	Race _race;
+    Race _race;
 
-	CharacterClass _characterClass;
+    CharacterClass _characterClass;
 };

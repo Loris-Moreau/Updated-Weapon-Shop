@@ -6,7 +6,6 @@ using namespace std;
 
 enum weaponTypes
 {
-	none,
     Sword,
     Dagger,
     Bow,
@@ -18,9 +17,6 @@ inline string WeaponToStr(weaponTypes weapon)
 {
 	switch (weapon)
 	{
-	case weaponTypes::none:
-		return "None";
-
 	case weaponTypes::Sword:
 		return "Sword";
 
@@ -35,6 +31,7 @@ inline string WeaponToStr(weaponTypes weapon)
 
 	case weaponTypes::Gun:
 		return "Gun";
+
 	default:
 		return "N/A";
 	}
