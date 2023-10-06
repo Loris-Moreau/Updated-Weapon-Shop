@@ -12,7 +12,7 @@ int main()
 {
 	//Initialize weapons
 	///Weapon(string name, string description, weaponTypes type, double weight, int damage, int buyingCost, double durability);
-	Weapon dagger("dagger", "small dagger",      weaponTypes::Dagger,  2,           5,         100,               10);
+	Weapon dagger("Dagger", "small dagger",      weaponTypes::Dagger,  2,           5,         100,               10);
 	Weapon sword("Sword",   "a sturdy sword",    weaponTypes::Sword,   10,          20,        275,               10);
 	Weapon gun("Gun",       "good ol' reliable", weaponTypes::Gun,     6,           200,       700,               70);
 	Weapon staff("Staff",   "good for Bonking",  weaponTypes::Staff,   7,           30,        450,               50);
@@ -34,7 +34,10 @@ int main()
 	int race;
 	cout << "choose from the available races : " << endl;
 
-	DisplayRaces();
+	cout << "1- Elf" << endl <<
+		    "2- Orc" << endl <<
+		    "3- Goblin" << endl <<
+		    "4- Human" << endl;
 
 	cin >> race;
 
@@ -47,9 +50,13 @@ int main()
 
 
 	int charaClass;
-	cout << "choose from the available classes : ";
+	cout << "choose from the available classes : "<<endl;
 
-	DisplayClasses();
+	cout << "1- Archer" << endl <<
+		    "2- Warrior" << endl <<
+		    "3- Priest" << endl <<
+		    "4- Paladin" << endl <<
+		    "5- Artificer" << endl;
 
 	cin >> charaClass;
 
@@ -60,13 +67,15 @@ int main()
 		cin >> charaClass;
 	}*/
 
+	race = race - 1;
+	charaClass = charaClass - 1;
 	///Character(string firstName, string lastName, string catchphrase, int money, int lifePoints, Race race, CharacterClass characterClass, weaponTypes weapon);
-	Character player(fName,              LName,    "I am the dumbest!",    500,        100,       (Race)race, (CharacterClass)charaClass,   dagger);
+	Character player(fName,              LName,    "I am the dumbest!",    1000,        100,       (Race)race, (CharacterClass)charaClass,   dagger);
 
 	player.Introduce();
 
 	//enemy NPC
-	Character enemyNPC("Johnathan", "Richardson", "vewy stwong", 100, 100, Race::Human, CharacterClass::Warrior, sword);
+	Character enemyNPC("Johnathan", "Richardson", "vewy stwong", 100, 100, Race::Human, CharacterClass::Paladin, sword);
 
 
 	//Initialize Merchant
@@ -76,8 +85,18 @@ int main()
 	merchant.Introduce();
 
 	merchant.DisplayShopInventory();
+	string answer = " ";
+	cout << "do you want to buy something ? (Y/N)" << endl;
+	cin >> answer;
+	if (answer == "Y" || answer == "y" || answer == "yes" || answer == "Yes")
+	{
+		string buyChoice;
+		cout << "wich one ?";
+		cin >> buyChoice;
+		merchant.BuyWeapon(player, buyChoice, 1);
+	}
 
-	/*
+	
 	while (player.GetLifePoints() > 0 || enemyNPC.GetLifePoints() < 0)
 	{
 		enemyNPC.UseWeapon(player);
@@ -91,5 +110,5 @@ int main()
 	{
 		player.Loot(enemyNPC);
 	}
-	*/
+	
 }

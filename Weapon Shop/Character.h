@@ -16,10 +16,6 @@ public:
 
     void Introduce() const;
 
-    //void DisplayRaces() const;
-
-    //void DisplayClasses() const;
-
     void UseWeapon(Character& target);
 
     void ReceiveDamage(int damage);

@@ -32,11 +32,3 @@ inline string RaceToStr(Race races)
 		return "N/A";
 	}
 }
-
-void DisplayRaces()
-{
-	for (int i = 1; i < 4; i++)
-	{
-		cout << i << ") " << RaceToStr((Race)i) << endl;
-	}
-}

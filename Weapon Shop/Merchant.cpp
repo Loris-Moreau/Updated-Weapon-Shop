@@ -17,10 +17,14 @@ void Merchant::DisplayShopInventory() const
 {
     cout << _merchantName << " : take a look : " << endl;
 
+    int i = 1;
     for (Weapon weapon : _weapons)
     {
-        cout << "- " << weapon.GetName() /* << ", Type : " << weapon.GetType() */<< " --> " << weapon.GetDescription() << ", Weight : " << weapon.GetWeight()
+        
+        cout << i << "- " << weapon.GetName() /* << ", Type : " << weapon.GetType() */ << " --> " << weapon.GetDescription() << ", Weight : " << weapon.GetWeight()
             << ", Damage : " << weapon.GetDamage() << ", Durability : " << weapon.GetDurability() << ", for " << weapon.GetPrice() << " coins" << endl;
+    
+        i++;
     }
 }
 
@@ -32,7 +36,7 @@ void Merchant::BuyWeapon(Character& character, const string& weaponName, double 
     {
         if (weapon.GetName() == weaponName)
         {
-            int buyingCost = (int)(weapon.GetPrice() / (1 - weapon.GetDurability() * durabilityModifier));
+            int buyingCost = (int)(weapon.GetPrice() * (0.2 + weapon.GetDurability() * durabilityModifier));
 
             if (character.GetMoney() >= buyingCost)
             {
@@ -58,7 +62,7 @@ void Merchant::SellWeapon(Character& character, const string& weaponName, double
 
     if (weaponToSell && weaponToSell->GetName() == weaponName)
     {
-        int sellingCost = (int)(weaponToSell->GetPrice() * (0.2 + weaponToSell->GetDurability() * durabilityModifier));
+        int sellingCost = (int)(weaponToSell->GetPrice() * (weaponToSell->GetDurability() * durabilityModifier));
 
         character.SetWeapon(nullptr);
         character.SetMoney(character.GetMoney() + sellingCost);

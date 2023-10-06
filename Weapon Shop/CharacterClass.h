@@ -36,11 +36,3 @@ inline string ClassToStr(CharacterClass charaClass)
 		return "N/A";
 	}
 }
-
-void DisplayClasses()
-{
-	for (int i = 1; i < 5; i++)
-	{
-		cout << i << ") " << ClassToStr((CharacterClass)i) << endl;
-	}
-}

@@ -22,27 +22,9 @@ void Character::Introduce() const
     }
     else
     {
-        cout << "Weapon : WAH" << endl;
+        cout << "Weapon : None" << endl;
     }
 }
-
-/*
-void Character::DisplayRaces() const
-{
-    for (int i = 1; i < 4; i++)
-    {
-        cout << i << ") " << RaceToStr((Race)i) << endl;
-    }
-}
-
-void Character::DisplayClasses() const
-{
-    for (int i = 1; i < 5; i++)
-    {
-        cout << i << ") " << ClassToStr((CharacterClass)i) << endl;
-    }
-}
-*/
 
 void Character::UseWeapon(Character& target)
 {
