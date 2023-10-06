@@ -93,7 +93,7 @@ int main()
 		string buyChoice;
 		cout << "wich one ?";
 		cin >> buyChoice;
-		merchant.BuyWeapon(player, buyChoice, 1);
+		merchant.BuyWeapon(player, buyChoice);
 	}
 
 	
