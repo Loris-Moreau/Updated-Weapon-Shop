@@ -127,8 +127,8 @@ int main()
 				exit;
 			}
 
-			enemyNPC.UseWeapon(player);
 			player.UseWeapon(enemyNPC);
+			enemyNPC.UseWeapon(player);
 		}
 
 		if (player.GetLifePoints() <= 0)

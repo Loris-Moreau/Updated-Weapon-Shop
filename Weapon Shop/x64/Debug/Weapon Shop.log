@@ -1,5 +1,3 @@
-﻿  Weapon Shop.cpp
-C:\Users\loris.moreau\source\repos\Weapon Shop\Weapon Shop\Weapon Shop.cpp(110,4): warning C4551: function call missing argument list
-C:\Users\loris.moreau\source\repos\Weapon Shop\Weapon Shop\Weapon Shop.cpp(127,5): warning C4551: function call missing argument list
-C:\Users\loris.moreau\source\repos\Weapon Shop\Weapon Shop\Weapon Shop.cpp(150,4): warning C4551: function call missing argument list
+﻿  Character.cpp
+C:\Users\loris.moreau\source\repos\Weapon Shop\Weapon Shop\Character.cpp(40,23): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Weapon Shop.vcxproj -> C:\Users\loris.moreau\source\repos\Weapon Shop\x64\Debug\Weapon Shop.exe
