@@ -11,6 +11,8 @@ using namespace std;
 
 int main()
 {
+	srand(time(NULL));
+
 	//Initialize weapons
 	///Weapon(string name, string description, weaponTypes type, double weight, int damage, int buyingCost, double durability);
 	Weapon dagger("Dagger", "small dagger", weaponTypes::Dagger, 2, 5, 100, 10);

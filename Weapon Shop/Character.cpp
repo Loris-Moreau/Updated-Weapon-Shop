@@ -37,7 +37,7 @@ void Character::UseWeapon(Character& target)
             ///Need to roll a 3D6 + modifier (3 rand num (1-6) & then add them together with the modifier)
             int modifier = _weapon->GetDamage() / 10;
             int nrDice = 3, nrSides = 6, result = 0;
-            srand(time(NULL));
+            
 
             for (int i = 0; i < nrDice; i++)
             {
@@ -68,11 +68,25 @@ void Character::UseWeapon(Character& target)
         {
             cout << _charaFirstName << " has no weapon equipped" << endl;
 
-            int damage = 6;
+            int modifier = 5;
+            int nrDice = 1, nrSides = 6, result = 0;
+
+
+            for (int i = 0; i < nrDice; i++)
+            {
+                result += ((rand() % nrSides) + 1);
+            }
+
+            result = result + modifier;
+            cout << "Modifier : " << modifier << endl;
+            cout << nrDice << "D" << nrSides << " = " << result << endl;
+
+
+            int damage = result;
             target.ReceiveDamage(damage);
             ReceiveDamage(damage / 3);
 
-            cout << _charaFirstName << " used their bare fists to deal " << damage << " damage to " << target.GetFirstName() << " and has received " << damage / 3 << " damage" << endl;
+            cout << _charaFirstName << " used their bare fists to deal " << damage << " damage to " << target.GetFirstName() << " and has received " << damage / 2 << " damage" << endl;
 
             cout << target.GetFirstName() << " has " << target.GetLifePoints() << " HP left " << endl;
             cout << GetFirstName() << " has " << GetLifePoints() << " HP left " << endl;
