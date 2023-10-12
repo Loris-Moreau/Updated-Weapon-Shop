@@ -1,7 +1,5 @@
-﻿  Merchant.cpp
-  Weapon Shop.cpp
+﻿  Weapon Shop.cpp
 C:\Users\loris.moreau\source\repos\Weapon Shop\Weapon Shop\Weapon Shop.cpp(110,4): warning C4551: function call missing argument list
 C:\Users\loris.moreau\source\repos\Weapon Shop\Weapon Shop\Weapon Shop.cpp(127,5): warning C4551: function call missing argument list
 C:\Users\loris.moreau\source\repos\Weapon Shop\Weapon Shop\Weapon Shop.cpp(150,4): warning C4551: function call missing argument list
-  Generating Code...
   Weapon Shop.vcxproj -> C:\Users\loris.moreau\source\repos\Weapon Shop\x64\Debug\Weapon Shop.exe

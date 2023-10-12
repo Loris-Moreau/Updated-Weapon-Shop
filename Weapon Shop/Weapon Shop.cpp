@@ -120,7 +120,7 @@ int main()
 	{
 		enemyNPC.Introduce();
 
-		while (player.GetLifePoints() > 0 || enemyNPC.GetLifePoints() > 0)
+		while (player.GetLifePoints() > 0 && enemyNPC.GetLifePoints() > 0)
 		{
 			if (player.GetLifePoints() <= 0 || enemyNPC.GetLifePoints() <= 0)
 			{
