@@ -23,9 +23,9 @@ void Merchant::DisplayShopInventory() const
     for (Weapon weapon : _weapons)
     {
         cout << i << "- " << weapon.GetName() /* << ", Type : " << weapon.GetType() */ << " --> " << weapon.GetDescription() << ", Weight : " << weapon.GetWeight()
-            << ", Damage : " << weapon.GetDamage() << ", Durability : " << weapon.GetDurability() 
-            << ", for " << weapon.GetPrice() * (0.2 + (weapon.GetDurability()/100)) << " coins" << endl;
-    
+            << ", Damage : " << weapon.GetDamage() << ", Durability : " << weapon.GetDurability()
+            << ", for " << weapon.GetPrice() * (0.2 + (weapon.GetDurability() / 100)) << " coins" << endl;
+
         i++;
     }
 
@@ -40,19 +40,24 @@ void Merchant::BuyWeapon(Character& character, string weaponName, double durabil
     {
         if (weapon.GetName() == weaponName)
         {
-            int buyingCost = (int)(weapon.GetPrice() * (0.2 + (weapon.GetDurability()/100) * durabilityModifier));
+            int buyingCost = (int)(weapon.GetPrice() * (0.2 + (weapon.GetDurability() / 100) * durabilityModifier));
 
             if (character.GetMoney() >= buyingCost)
             {
                 character.SetWeapon(new Weapon(weapon));
+
                 character.SetMoney(character.GetMoney() - buyingCost);
                 _shopMoney += buyingCost;
+
                 cout << character.GetFirstName() << " bought " << weapon.GetName() << " for " << buyingCost << " coins from " << _merchantName << "'s shop." << endl;
+                cout << "you have " << character.GetMoney() << " coins left" << endl;
+
                 return;
             }
             else
             {
                 cout << "Not enough money to buy " << weapon.GetName() << " from " << _merchantName << "'s shop." << endl;
+
                 return;
             }
         }

@@ -41,7 +41,7 @@ int main()
 		"2- Orc" << endl <<
 		"3- Goblin" << endl <<
 		"4- Human" << endl;
-
+	cout << fName << " : ";
 	cin >> race;
 	race = race - 1;
 
@@ -60,6 +60,7 @@ int main()
 		"4- Paladin" << endl <<
 		"5- Artificer" << endl;
 
+	cout << fName << " : ";
 	cin >> charaClass;
 	charaClass = charaClass - 1;
 
@@ -69,6 +70,8 @@ int main()
 		cout << "choose from the available classes : ";
 		cin >> charaClass;
 	}*/
+
+	cout << endl;
 
 	///Character(string firstName, string lastName, string catchphrase, int money, int lifePoints, Race race, CharacterClass characterClass, weaponTypes weapon);
 	Character player(fName, LName, "I am the dumbest!", 1000, 100, (Race)race, (CharacterClass)charaClass, dagger);
