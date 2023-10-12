@@ -73,7 +73,7 @@ void Merchant::SellWeapon(Character& character, string weaponName, double durabi
 
     if (weaponToSell && weaponToSell->GetName() == weaponName)
     {
-        int sellingCost = (int)(weaponToSell->GetPrice() * (weaponToSell->GetDurability() * durabilityModifier));
+        int sellingCost = (int)(weaponToSell->GetPrice() * ((weaponToSell->GetDurability() / 100) * durabilityModifier));
 
         character.SetWeapon(nullptr);
         character.SetMoney(character.GetMoney() + sellingCost);

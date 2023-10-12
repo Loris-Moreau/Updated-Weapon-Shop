@@ -90,9 +90,10 @@ int main()
 
 	merchant.Introduce();
 
+	merchant.BuyWeapon(enemyNPC, "Dagger", 0.65);
 
 	string answer = " ";
-	cout << "do you want to buy something ? (Y/N)" << endl;
+	cout << "do you want to buy something ? (Y/N): " << endl;
 	cin >> answer;
 	if (answer == "Y" || answer == "y" || answer == "Yes" || answer == "yes")
 	{
@@ -109,14 +110,13 @@ int main()
 		if (answer == "N" || answer == "n" || answer == "No" || answer == "no")
 		{
 			cout << "alright then moving on" << endl;
-			exit;
 		}
 	}
 
 	cout << endl;
 
 	answer = " ";
-	cout << "There is an Enemy ahead do you wish to fight them ? : ";
+	cout << "There is an Enemy ahead do you wish to fight them ? (Y/N): ";
 	cin >> answer;
 	if (answer == "Y" || answer == "y" || answer == "Yes" || answer == "yes")
 	{
@@ -135,7 +135,7 @@ int main()
 
 		if (player.GetLifePoints() <= 0)
 		{
-			cout << "You Died";
+			cout << "----You Died----";
 			return 0;
 		}
 
@@ -149,7 +149,29 @@ int main()
 		if (answer == "N" || answer == "n" || answer == "No" || answer == "no")
 		{
 			cout << "ok" << endl;
-			exit;
 		}
 	}
+
+	answer = " ";
+	cout << "do you want to sell something ? (Y/N): " << endl;
+	cin >> answer;
+	if (answer == "Y" || answer == "y" || answer == "Yes" || answer == "yes")
+	{
+		//merchant.DisplayShopInventory();
+		player.GetWeapon();
+
+		string sellChoice;
+		cout << "wich one ? : ";
+		cin >> sellChoice;
+		merchant.SellWeapon(player, sellChoice);
+	}
+	else
+	{
+		if (answer == "N" || answer == "n" || answer == "No" || answer == "no")
+		{
+			cout << "alright then moving on" << endl;
+		}
+	}
+
+	cout << endl;
 }
