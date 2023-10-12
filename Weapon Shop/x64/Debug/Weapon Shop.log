@@ -1,2 +1,5 @@
 ﻿  Weapon Shop.cpp
+C:\Users\loris.moreau\source\repos\Weapon Shop\Weapon Shop\Weapon Shop.cpp(107,4): warning C4551: function call missing argument list
+C:\Users\loris.moreau\source\repos\Weapon Shop\Weapon Shop\Weapon Shop.cpp(124,5): warning C4551: function call missing argument list
+C:\Users\loris.moreau\source\repos\Weapon Shop\Weapon Shop\Weapon Shop.cpp(147,4): warning C4551: function call missing argument list
   Weapon Shop.vcxproj -> C:\Users\loris.moreau\source\repos\Weapon Shop\x64\Debug\Weapon Shop.exe

@@ -1,4 +1,4 @@
-// Weapon Shop.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//Weapon Shop.cpp : This file contains the 'main' function. Program execution begins and ends there.
 
 #include <iostream>
 #include <string>
@@ -8,6 +8,7 @@
 #include "Merchant.h"
 
 using namespace std;
+
 int main()
 {
 	//Initialize weapons
@@ -31,6 +32,8 @@ int main()
 	cout << "your Last Name : ";
 	cin >> LName;
 
+	cout << endl;
+
 	int race;
 	cout << "choose from the available races : " << endl;
 
@@ -40,7 +43,7 @@ int main()
 		"4- Human" << endl;
 
 	cin >> race;
-race = race - 1;
+	race = race - 1;
 
 	/*while (race > 4)
 	{
@@ -58,7 +61,7 @@ race = race - 1;
 		"5- Artificer" << endl;
 
 	cin >> charaClass;
-charaClass = charaClass - 1;
+	charaClass = charaClass - 1;
 
 	/*while (charaClass > 5)
 	{
@@ -82,30 +85,66 @@ charaClass = charaClass - 1;
 
 	merchant.Introduce();
 
-	merchant.DisplayShopInventory();
+
 	string answer = " ";
 	cout << "do you want to buy something ? (Y/N)" << endl;
 	cin >> answer;
-	if (answer == "Y" || answer == "y" || answer == "yes" || answer == "Yes")
+	if (answer == "Y" || answer == "y" || answer == "Yes" || answer == "yes")
 	{
+		merchant.DisplayShopInventory();
+
 		string buyChoice;
-		cout << "wich one ?";
+		cout << "wich one ? : ";
 		cin >> buyChoice;
+		//buyChoice = buyChoice - 1;
 		merchant.BuyWeapon(player, buyChoice);
 	}
-
-
-	while (player.GetLifePoints() > 0 || enemyNPC.GetLifePoints() < 0)
+	else
 	{
-		enemyNPC.UseWeapon(player);
-		player.UseWeapon(enemyNPC);
-
-		cout << player.GetFirstName() << " has " << player.GetLifePoints() << " LP left" << endl;
-		cout << enemyNPC.GetFirstName() << " has " << enemyNPC.GetLifePoints() << " LP left" << endl;
+		if (answer == "N" || answer == "n" || answer == "No" || answer == "no")
+		{
+			cout << "alright then moving on" << endl;
+			exit;
+		}
 	}
 
-	if (enemyNPC.GetLifePoints() <= 0)
+	cout << endl;
+
+	answer = " ";
+	cout << "There is an Enemy ahead do you wish to fight them ? : ";
+	cin >> answer;
+	if (answer == "Y" || answer == "y" || answer == "Yes" || answer == "yes")
 	{
-		player.Loot(enemyNPC);
+		enemyNPC.Introduce();
+
+		while (player.GetLifePoints() > 0 || enemyNPC.GetLifePoints() > 0)
+		{
+			if (player.GetLifePoints() <= 0 || enemyNPC.GetLifePoints() <= 0)
+			{
+				exit;
+			}
+
+			enemyNPC.UseWeapon(player);
+			player.UseWeapon(enemyNPC);
+		}
+
+		if (player.GetLifePoints() <= 0)
+		{
+			cout << "You Died";
+			return 0;
+		}
+
+		if (enemyNPC.GetLifePoints() <= 0)
+		{
+			player.Loot(enemyNPC);
+		}
+	}
+	else
+	{
+		if (answer == "N" || answer == "n" || answer == "No" || answer == "no")
+		{
+			cout << "ok" << endl;
+			exit;
+		}
 	}
 }

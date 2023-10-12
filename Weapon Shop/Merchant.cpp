@@ -11,6 +11,8 @@ void Merchant::Introduce() const
     cout << "Shopkeeper : Welcome to " << _shopName << ", " << _description << " ! I am " << _merchantName << endl;
     //cout << "Catchphrase : " << _merchantCatchphrase << endl;
     cout << "Money : " << _shopMoney << " coins" << endl;
+
+    cout << endl;
 }
 
 void Merchant::DisplayShopInventory() const
@@ -20,15 +22,17 @@ void Merchant::DisplayShopInventory() const
     int i = 1;
     for (Weapon weapon : _weapons)
     {
-        
         cout << i << "- " << weapon.GetName() /* << ", Type : " << weapon.GetType() */ << " --> " << weapon.GetDescription() << ", Weight : " << weapon.GetWeight()
-            << ", Damage : " << weapon.GetDamage() << ", Durability : " << weapon.GetDurability() << ", for " << weapon.GetPrice() << " coins" << endl;
+            << ", Damage : " << weapon.GetDamage() << ", Durability : " << weapon.GetDurability() 
+            << ", for " << weapon.GetPrice() * (0.2 + (weapon.GetDurability()/100)) << " coins" << endl;
     
         i++;
     }
+
+    cout << endl;
 }
 
-void Merchant::BuyWeapon(Character& character, const string& weaponName, double durabilityModifier)
+void Merchant::BuyWeapon(Character& character, string weaponName, double durabilityModifier)
 {
     Weapon* weaponToBuy = nullptr;
 
@@ -36,7 +40,7 @@ void Merchant::BuyWeapon(Character& character, const string& weaponName, double 
     {
         if (weapon.GetName() == weaponName)
         {
-            int buyingCost = (int)(weapon.GetPrice() * (0.2 + weapon.GetDurability() * durabilityModifier));
+            int buyingCost = (int)(weapon.GetPrice() * (0.2 + (weapon.GetDurability()/100) * durabilityModifier));
 
             if (character.GetMoney() >= buyingCost)
             {
@@ -54,9 +58,11 @@ void Merchant::BuyWeapon(Character& character, const string& weaponName, double 
         }
     }
     cout << weaponName << " is not available in " << _merchantName << "'s shop." << endl;
+
+    cout << endl;
 }
 
-void Merchant::SellWeapon(Character& character, const string& weaponName, double durabilityModifier)
+void Merchant::SellWeapon(Character& character, string weaponName, double durabilityModifier)
 {
     Weapon* weaponToSell = character.GetWeapon();
 
@@ -74,4 +80,6 @@ void Merchant::SellWeapon(Character& character, const string& weaponName, double
     {
         cout << character.GetFirstName() << " does not have " << weaponName << " to sell." << endl;
     }
+
+    cout << endl;
 }

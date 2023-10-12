@@ -16,9 +16,9 @@ public:
 
     void DisplayShopInventory() const;
 
-    void BuyWeapon(Character& character, const string& weaponName, double durabilityModifier = 1.0);
+    void BuyWeapon(Character& character, string weaponName, double durabilityModifier = 1.0);
 
-    void SellWeapon(Character& character, const string& weaponName, double durabilityModifier = 1.0);
+    void SellWeapon(Character& character, string weaponName, double durabilityModifier = 1.0);
 
 private:
 	string _merchantName;
