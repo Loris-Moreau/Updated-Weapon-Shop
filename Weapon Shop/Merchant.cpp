@@ -50,7 +50,7 @@ void Merchant::BuyWeapon(Character& character, string weaponName, double durabil
                 _shopMoney += buyingCost;
 
                 cout << character.GetFirstName() << " bought " << weapon.GetName() << " for " << buyingCost << " coins from " << _merchantName << "'s shop." << endl;
-                cout << "you have " << character.GetMoney() << " coins left" << endl;
+                cout << character.GetFirstName() << " has " << character.GetMoney() << " coins left" << endl;
 
                 return;
             }

@@ -110,7 +110,12 @@ void Character::ReceiveDamage(int damage)
 void Character::Loot(Character& defeatedCharacter)
 {
     _charaMoney += defeatedCharacter.GetMoney() / 2;
-    Weapon* weapon = defeatedCharacter.GetWeapon();
+    Weapon* weapon = nullptr;
+
+    if (defeatedCharacter._weapon->GetDamage() > _weapon->GetDamage())
+    {
+        weapon = defeatedCharacter.GetWeapon();
+    }
 
     if (weapon)
     {

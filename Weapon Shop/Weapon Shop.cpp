@@ -81,7 +81,7 @@ int main()
 	player.Introduce();
 
 	//enemy NPC
-	Character enemyNPC("Johnathan", "Richardson", "vewy stwong", 100, 100, Race::Human, CharacterClass::Paladin, sword);
+	Character enemyNPC("Johnathan", "Richardson", "vewy stwong", 500, 90, Race::Human, CharacterClass::Paladin, sword);
 
 
 	//Initialize Merchant
@@ -90,7 +90,7 @@ int main()
 
 	merchant.Introduce();
 
-	merchant.BuyWeapon(enemyNPC, "Dagger", 0.65);
+	merchant.BuyWeapon(enemyNPC, "Sword", 0.65);
 
 	string answer = " ";
 	cout << "do you want to buy something ? (Y/N): " << endl;
