@@ -22,7 +22,7 @@ void Merchant::DisplayShopInventory() const
     int i = 1;
     for (Weapon weapon : _weapons)
     {
-        cout << i << "- " << weapon.GetName() /* << ", Type : " << weapon.GetType() */ << " --> " << weapon.GetDescription() << ", Weight : " << weapon.GetWeight()
+        cout << "-- " << weapon.GetName() /* << ", Type : " << weapon.GetType() */ << " --> " << weapon.GetDescription() << ", Weight : " << weapon.GetWeight()
             << ", Damage : " << weapon.GetDamage() << ", Durability : " << weapon.GetDurability()
             << ", for " << weapon.GetPrice() * (0.2 + (weapon.GetDurability() / 100)) << " coins" << endl;
 
@@ -80,6 +80,8 @@ void Merchant::SellWeapon(Character& character, string weaponName, double durabi
 
         _shopMoney -= sellingCost;
         cout << character.GetFirstName() << " sold " << weaponToSell->GetName() << " for " << sellingCost << " coins to " << _shopName << "'s shop." << endl;
+
+        cout << character.GetFirstName() << " now has " << character.GetMoney() << " coins" << endl;
     }
     else
     {
